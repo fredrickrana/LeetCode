@@ -54,10 +54,10 @@
 // if values match, return false
 // if values do not match, return true
 
-var containsDuplicate = function(nums) {
-    const set = new Set(nums);
-    return set.size !== nums.length;
-};
+// var containsDuplicate = function(nums) {
+//     const set = new Set(nums);
+//     return set.size !== nums.length;
+// };
 
 // create a map
 // check each element within the array
@@ -66,17 +66,17 @@ var containsDuplicate = function(nums) {
 // if it exists, return false
 // if there are no existing values, return true
 
-// var containsDuplicate = function(nums) {
-//     let hashMap = new Map();
-//     for (let i = 0; i < nums.length; i++) {
-//         if (hashMap.has(nums[i])) {
-//            return true; 
-//         } else {
-//             hashMap.set(nums[i], i);
-//         }
-//     }
-//     return false;
-// };
+var containsDuplicate = function(nums) {
+    let hashMap = new Map();
+    for (let i = 0; i < nums.length; i++) {
+        if (hashMap.has(nums[i])) {
+           return true; 
+        } else {
+            hashMap.set(nums[i], i);
+        }
+    }
+    return false;
+};
 
 
 
