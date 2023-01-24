@@ -21,6 +21,13 @@
 //   }
 // };
 
+// hashmap
+// create an object literal for data storage
+// look through each index within the array
+// subtract target by the selected index number and store within variable
+// if the stored value exists within the object, return the value and the index of the matching number
+// if the stored value does not exist, use bracket notation to store the value of the element in the array as a key with its index as its value
+
 var twoSum = function(nums, target) {
     let map = {};
     for (let i = 0; i < nums.length; i++) {
