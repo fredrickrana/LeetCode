@@ -12,15 +12,15 @@
 // use the join method to create and return a new string by concatenating all the elements in the array
 // if the sortedS string is equal to the sortedT string, return true, otherwise, return false
 
-var isAnagram = function(s, t) {
-    if (s.length !== t.length) {
-        return false;
-    } else {
-        let sortedS = s.split('').sort().join('');
-        let sortedT = t.split('').sort().join('');
-        return sortedS === sortedT;
-    }
-};
+// var isAnagram = function(s, t) {
+//     if (s.length !== t.length) {
+//         return false;
+//     } else {
+//         let sortedS = s.split('').sort().join('');
+//         let sortedT = t.split('').sort().join('');
+//         return sortedS === sortedT;
+//     }
+// };
 
 // hashmap
 
@@ -57,3 +57,26 @@ var isAnagram = function(s, t) {
     }
     return true;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
