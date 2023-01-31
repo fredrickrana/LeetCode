@@ -14,3 +14,6 @@ var isPalindrome = function(x) {
     }
     return (parseInt(palindrome) === x);
 };
+
+// optimized
+
