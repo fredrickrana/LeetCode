@@ -3,17 +3,26 @@
  * @return {boolean}
  */
 
-var isPalindrome = function(x) {
-    if (x < 0) {
-        return false;
-    }
-    let palindrome = '';
-    let number = x.toString();
-    for (let i = number.length - 1; i >= 0; i--) {
-        palindrome += number[i];
-    }
-    return (parseInt(palindrome) === x);
-};
+// var isPalindrome = function(x) {
+//     if (x < 0) {
+//         return false;
+//     }
+//     let palindrome = '';
+//     let number = x.toString();
+//     for (let i = number.length - 1; i >= 0; i--) {
+//         palindrome += number[i];
+//     }
+//     return (parseInt(palindrome) === x);
+// };
 
 // optimized
-
+var isPalindrome = function(x) {
+    let reverse = 0;
+    let copy = x;
+    while (copy > 0) {
+        const digit = copy % 10;
+        reverse = reverse * 10 + digit;
+        copy = Math.floor(copy / 10);
+    }
+    return reverse === x;
+};
