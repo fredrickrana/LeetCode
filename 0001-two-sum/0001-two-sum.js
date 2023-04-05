@@ -4,7 +4,7 @@
  * @return {number[]}
  */
 
-// brute force
+// approcach 1) brute force
 // look through each index in the array
 // subtract target by the selected index number and store within variable
 // check the rest of the numbers within the array
@@ -21,7 +21,8 @@
 //   }
 // };
 
-// hashmap
+
+// approach 2) hashmap
 // create an object literal for data storage
 // look through each index within the array
 // subtract target by the selected index number and store within variable
