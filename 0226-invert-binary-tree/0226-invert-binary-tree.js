@@ -26,15 +26,48 @@
 
 // finally, return the inverted tree by returning the 'root' node
 
+// var invertTree = function(root) {
+//     if (root === null) return null;
+    
+//     let temp = root.left;
+//     root.left = root.right;
+//     root.right = temp;
+    
+//     invertTree(root.left);
+//     invertTree(root.right);
+    
+//     return root;
+// };
+
+// ITERATIVE APPROACH && QUEUE - LEVEL ORDER TRANSVERSAL
+// queue = first in, first out
+
+// base case checks if the current node 'root' is null and if it is, we have reached end of subtree, so return null
+
+// create a queue to perform level-order transversal
+
+// enter loop that continues as long as queue is not empty
+// remove the front node from the queue using shift(). this node represents the current level we are processing
+
+// swap the left and right subtrees of the current node by using a temporary variable 'temp'
+
+// add the left and right children to the queue
+// return the root node
+
 var invertTree = function(root) {
     if (root === null) return null;
     
-    let temp = root.left;
-    root.left = root.right;
-    root.right = temp;
+    const queue = [root];
     
-    invertTree(root.left);
-    invertTree(root.right);
-    
+    while (queue.length > 0) {
+        const node = queue.shift();
+        
+        let temp = node.left;
+        node.left = node.right;
+        node.right = temp;
+        
+        if (node.left !== null) queue.push(node.left);
+        if (node.right !== null) queue.push(node.right);
+    }
     return root;
 };
