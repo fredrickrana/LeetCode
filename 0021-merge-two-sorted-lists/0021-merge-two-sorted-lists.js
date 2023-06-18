@@ -67,53 +67,62 @@
 // After first loop, if there are remaining nodes in 'list1', a second while loop is used to append them to the end of 'newList'
 // Similarly, if there are remaining nodes in 'list2', a third while loop is used to append them to the end of 'newList'
 
-var mergeTwoLists = function(list1, list2) {
-    let newList = new ListNode();
-    let headOfNewList = newList;
+// var mergeTwoLists = function(list1, list2) {
+//     let newList = new ListNode();
+//     let headOfNewList = newList;
     
-    while(list1 && list2){
-        if(list1.val <= list2.val){
-            newList.next = new ListNode(list1.val);
-            list1 = list1.next;
-        }
-        else{
-            newList.next = new ListNode(list2.val);
-            list2 = list2.next;
-        }
-        newList = newList.next;
-    }
+//     while(list1 && list2){
+//         if(list1.val <= list2.val){
+//             newList.next = new ListNode(list1.val);
+//             list1 = list1.next;
+//         }
+//         else{
+//             newList.next = new ListNode(list2.val);
+//             list2 = list2.next;
+//         }
+//         newList = newList.next;
+//     }
     
-    while(list1){
-        newList.next = new ListNode(list1.val);
-        list1 = list1.next;
-        newList = newList.next;
-    }
-    while(list2){
-        newList.next = new ListNode(list2.val);
-        list2 = list2.next;
-        newList = newList.next;
-    }
+//     while(list1){
+//         newList.next = new ListNode(list1.val);
+//         list1 = list1.next;
+//         newList = newList.next;
+//     }
+//     while(list2){
+//         newList.next = new ListNode(list2.val);
+//         list2 = list2.next;
+//         newList = newList.next;
+//     }
     
-    return headOfNewList.next;
-};
+//     return headOfNewList.next;
+// };
 
 
 
 
 // APPROACH: RECURSION
+// This recursive approach recursively merges the lists by comparing the current nodes' values and recursively merging the remaining nodes until one of the lists becomes null or empty. The function returns the head of the merged list, which is list1 or list2, depending on the comparisons made during the merging process.
 
-// var mergeTwoLists = function(list1, list2) {
-//     if (!list1) return list2;
-//     if (!list2) return list1;
+// check to see if each list has nodes, and if not return the other list
+
+// compare the current node values of 'list1' and 'list2'
+// if node value of list1 is less than list2, we choose 'list1' to be the next node in the merged list
+// we recursively call the 'mergeTwoLists' function, passing 'list1.next' (the next node of 'list1') and 'list2' as the arguments. this recursive call will merge the remaining nodes of 'list1' and 'list2'
+// we assign the result of the recursive call to 'list1.next', indicating that the next node of 'list1' is the merged list of the remaining nodes
+// finally we return 'list2' as it represents the merged list where all the nodes from list1 and list2 are appropriately merged in sorted order
+
+var mergeTwoLists = function(list1, list2) {
+    if (!list1) return list2;
+    if (!list2) return list1;
     
-//     if (list1.val < list2.val) {
-//         list1.next = mergeTwoLists(list1.next, list2);
-//         return list1;
-//     } else {
-//         list1.next = mergeTwoLists(list1, list2.next);
-//         return list2;
-//     }
-// };
+    if (list1.val < list2.val) {
+        list1.next = mergeTwoLists(list1.next, list2);
+        return list1;
+    } else {
+        list2.next = mergeTwoLists(list1, list2.next);
+        return list2;
+    }
+};
 
 
 
