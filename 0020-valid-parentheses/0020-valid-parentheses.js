@@ -19,7 +19,7 @@
 
 
 var isValid = function(s) {
-    if (!s || s.length <= 1) {
+    if (s.length <= 1) {
         return false;
     }
     let stack = [];
