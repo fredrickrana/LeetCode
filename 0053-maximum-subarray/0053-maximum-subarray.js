@@ -24,18 +24,18 @@
 
 // return the maximum sum 'max2', which represents the maxium sum of any contiguous subarray within the 'nums' array
 
-var maxSubArray = function(nums) {
-    let max1 = nums[0];
-    let max2 = nums[0]; // maximum sum seen so far
-    for (let i = 1; i < nums.length; i++) {
-        max1 = Math.max(nums[i], max1 + nums[i])
+// var maxSubArray = function(nums) {
+//     let max1 = nums[0];
+//     let max2 = nums[0]; // maximum sum seen so far
+//     for (let i = 1; i < nums.length; i++) {
+//         max1 = Math.max(nums[i], max1 + nums[i])
         
-        if (max1 > max2) {
-            max2 = max1;
-        }
-    }
-    return max2;
-};
+//         if (max1 > max2) {
+//             max2 = max1;
+//         }
+//     }
+//     return max2;
+// };
 
 // [-2,1,-3,4,-1,2,1,-5,4]
 // max1 = -2
@@ -70,16 +70,16 @@ var maxSubArray = function(nums) {
 // this step ensures that the 'currentSum' always represents the maximum sum of a subarray ending at the current element
 // function also updates the 'maxSum' by comparing it with the 'currentSum' at each iteration, ensuring that 'maxSum' holds the maximum sum seen so far
 
-// var maxSubArray = function(nums) {
-//     let maxSum = nums[0];
-//     let currentSum = nums[0];
+var maxSubArray = function(nums) {
+    let maxSum = nums[0]; // maximum sum of the first element
+    let currentSum = nums[0]; // current sum as the first element
     
-//     for (let i = 1; i < nums.length; i++) {
-//         currentSum = Math.max(nums[i], currentSum + nums[i]);
-//         maxSum = Math.max(maxSum, currentSum);
-//     }
-//     return maxSum;
-// };
+    for (let i = 1; i < nums.length; i++) { 
+        currentSum = Math.max(nums[i], currentSum + nums[i]); // Calculate the maximum sum by choosing the maximum between the current element and the current element + previous sum
+        maxSum = Math.max(maxSum, currentSum); // // Update the maximum sum if the current sum is greater
+    }
+    return maxSum;
+};
 
 
 // The key difference between the two approaches lies in their time complexity. The native approach has a quadratic time complexity, making it less efficient for large input sizes. On the other hand, Kadane's algorithm provides an optimized solution with linear time complexity, making it more efficient.
