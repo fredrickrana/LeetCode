@@ -14,17 +14,17 @@
 // calculate the length of the linked list
 // length divded by two and round
 
-var middleNode = function(head) {
-    let node = head;
-    let memory = [];
+// var middleNode = function(head) {
+//     let node = head;
+//     let memory = [];
     
-    while (node !== null) {
-        memory.push(node);
-        node = node.next;
-    }
+//     while (node !== null) {
+//         memory.push(node);
+//         node = node.next;
+//     }
     
-    return memory[Math.floor(memory.length/2)];
-};
+//     return memory[Math.floor(memory.length/2)];
+// };
 // -------------------
 
 // APPROACH: TWO POINTERS
@@ -36,13 +36,13 @@ var middleNode = function(head) {
 // Time Complexity: O(n)
 // Space Complexity: O(1)
 
-// var middleNode = function(head) {
-//     let fast = head;
-//     let slow = head;
+var middleNode = function(head) {
+    let fast = head;
+    let slow = head;
     
-//     while (fast !== null && fast.next !== null) {
-//         fast = fast.next.next;
-//         slow.next;
-//     }
-//     return slow;
-// };
+    while (fast !== null && fast.next !== null) {
+        fast = fast.next.next;
+        slow = slow.next;
+    }
+    return slow;
+};
