@@ -26,15 +26,15 @@
 // Time: O(n^2)
 // Space: O(1)
 
-var twoSum = function (nums, target) {
-    for (let i = 0; i < nums.length; i++) {
-        for (let x = i + 1; x < nums.length; x++) {
-            if (nums[i] + nums[x] === target) {
-                return [i, x];
-            }
-        }
-    }
-}
+// var twoSum = function (nums, target) {
+//     for (let i = 0; i < nums.length; i++) {
+//         for (let x = i + 1; x < nums.length; x++) {
+//             if (nums[i] + nums[x] === target) {
+//                 return [i, x];
+//             }
+//         }
+//     }
+// }
 
 
 // brute force
@@ -78,16 +78,16 @@ var twoSum = function (nums, target) {
 // };
 
 
-// var twoSum = function(nums, target) {
-//     let map = {};
-//     for (let i = 0; i < nums.length; i++) {
-//         const number = target - nums[i];
-//         if (number in map) {
-//             return [map[number], i]
-//         }
-//         map[nums[i]] = i;
-//     }
-// }
+var twoSum = function(nums, target) {
+    let map = {};
+    for (let i = 0; i < nums.length; i++) {
+        const number = target - nums[i];
+        if (number in map) {
+            return [map[number], i]
+        }
+        map[nums[i]] = i;
+    }
+}
 
 // var twoSum = function(nums, target) {
 //     let map = {};
