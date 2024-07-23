@@ -66,17 +66,17 @@
 // if it exists, return false
 // if there are no existing values, return true
 
-var containsDuplicate = function(nums) {
-    let hashMap = new Map();
-    for (let i = 0; i < nums.length; i++) {
-        if (hashMap.has(nums[i])) {
-           return true; 
-        } else {
-            hashMap.set(nums[i], i);
-        }
-    }
-    return false;
-};
+// var containsDuplicate = function(nums) {
+//     let hashMap = new Map();
+//     for (let i = 0; i < nums.length; i++) {
+//         if (hashMap.has(nums[i])) {
+//            return true; 
+//         } else {
+//             hashMap.set(nums[i], i);
+//         }
+//     }
+//     return false;
+// };
 
 // var containsDuplicate = function(nums) {
 //     let array = [];
@@ -90,6 +90,25 @@ var containsDuplicate = function(nums) {
 //     return false;
 // }
 
+// var containsDuplicate = function(nums) {
+//     let array = [];
+//     for (let i = 0; i < nums.length; i++) {
+//         if (array.includes(nums[i])) {
+//             return true;
+//         } else {
+//             array.push(nums[i]);
+//         }
+//     }
+//     return false;
+// };
+// time limited exceeded
 
+var containsDuplicate = function(nums) {
+    let set = new Set(nums);
+    if (set.size !== nums.length) {
+        return true;
+    }
+    return false; 
+}
 
 
