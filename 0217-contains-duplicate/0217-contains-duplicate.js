@@ -103,12 +103,16 @@
 // };
 // time limited exceeded
 
-var containsDuplicate = function(nums) {
-    let set = new Set(nums);
-    if (set.size !== nums.length) {
-        return true;
-    }
-    return false; 
-}
+// var containsDuplicate = function(nums) {
+//     let set = new Set(nums);
+//     if (set.size !== nums.length) {
+//         return true;
+//     }
+//     return false; 
+// }
 
+var containsDuplicate = function(nums) {
+    const set = new Set(nums);
+    return set.size !== nums.length;
+}
 
