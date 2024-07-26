@@ -111,6 +111,15 @@
 //     return false; 
 // }
 
+// set / map
+// time: O(N)
+// space: O(N)
+
+// create a new set which will remove all duplicates within the array
+// use the size method to compare the element count to the array length
+// if values match, return false
+// if values do not match, return true
+
 var containsDuplicate = function(nums) {
     const set = new Set(nums);
     return set.size !== nums.length;
