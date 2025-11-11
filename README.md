@@ -23,4 +23,16 @@
 |  |
 | ------- |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/fredrickrana/LeetCode/tree/master/0121-best-time-to-buy-and-sell-stock) |
+## Design
+|  |
+| ------- |
+| [1708-design-parking-system](https://github.com/fredrickrana/LeetCode/tree/master/1708-design-parking-system) |
+## Simulation
+|  |
+| ------- |
+| [1708-design-parking-system](https://github.com/fredrickrana/LeetCode/tree/master/1708-design-parking-system) |
+## Counting
+|  |
+| ------- |
+| [1708-design-parking-system](https://github.com/fredrickrana/LeetCode/tree/master/1708-design-parking-system) |
 <!---LeetCode Topics End-->
